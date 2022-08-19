@@ -1,6 +1,6 @@
-# Exercises files for the <br>Full Stack Open 2022 Course 👨🏻‍💻📚
+# Exercises files for the <br>_Full Stack Open 2022 Course_ 👨🏻‍💻📚
 
-## Course Description 📝
+<font size=5>**Course Description 📝**</font>
 
 This course serves as an introduction to modern web application development with JavaScript. The main focus is on building single page applications with ReactJS that use REST APIs built with Node.js. It also contains a section on GraphQL, a modern alternative to REST APIs.
 
@@ -10,4 +10,4 @@ Participants are expected to have good programming skills, basic knowledge of we
 
 Partners and affiliates of the course include [Houston Inc](https://www.houston-inc.com/), [Terveystalo](https://www.terveystalo.com/fi/yhtio/toihin-terveystaloon/), [Elisa](https://elisa.fi/), [K-ryhmä](https://www.kesko.fi/), [Unity Technologies](https://www.instagram.com/unitytechnologies/?hl=en) and [Konecranes](https://careers.konecranes.com/Konecranes/).
 
-For more info about the course, please, [click here.](https://fullstackopen.com/en/) ⬅️
+_For more info about the course, please, [click here.](https://fullstackopen.com/en/) ⬅️_
