@@ -4,7 +4,7 @@ const Button = ({ handleClick, text }) => (
   <button onClick={handleClick}>{text}</button>
 );
 
-const DisplayStatistics = ({ good, neutral, bad }) => {
+const Statistics = ({ good, neutral, bad }) => {
   return (
     <div>
       <div>Good Feedback: {good}</div>
@@ -42,7 +42,7 @@ const App = () => {
       <Button handleClick={handleNeutralClick} text="neutral" />
       <Button handleClick={handleBadClick} text="bad" />
       <h2>Statistics</h2>
-      <DisplayStatistics good={good} neutral={neutral} bad={bad} />
+      <Statistics good={good} neutral={neutral} bad={bad} />
     </>
   );
 };
