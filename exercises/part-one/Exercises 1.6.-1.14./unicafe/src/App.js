@@ -10,19 +10,19 @@ const Statistics = (props) => {
   } else {
     return (
       <div>
-        <StatisticsLine text="good" value={props.good} />
-        <StatisticsLine text="neutral" value={props.neutral} />
-        <StatisticsLine text="bad" value={props.bad} />
+        <StatisticsLine text="GOOD" value={props.good} />
+        <StatisticsLine text="NEUTRAL" value={props.neutral} />
+        <StatisticsLine text="BAD" value={props.bad} />
         <StatisticsLine
-          text="all"
+          text="TOTAL"
           value={props.good + props.neutral + props.bad}
         />
         <StatisticsLine
-          text="average"
+          text="AVERAGE"
           value={((props.good + props.neutral + props.bad) / 3).toFixed(1)}
         />
         <StatisticsLine
-          text="positive"
+          text="POSITIVE"
           value={
             (
               (props.good * 100) /
@@ -38,11 +38,14 @@ const Statistics = (props) => {
 const StatisticsLine = (props) => {
   // console.log(props);
   return (
-    <div>
-      <div>
-        {props.text} {props.value}
-      </div>
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td style={{ width: 90 }}>{props.text}</td>
+          <td>{props.value}</td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 
@@ -65,12 +68,18 @@ const App = () => {
 
   return (
     <>
-      <h1>Give Feedback!</h1>
-      <Button handleClick={handleGoodClick} text="good" />
-      <Button handleClick={handleNeutralClick} text="neutral" />
-      <Button handleClick={handleBadClick} text="bad" />
-      <h2>Statistics</h2>
+      <h1>GIVE FEEDBACK</h1>
+      <Button handleClick={handleGoodClick} text="GOOD" />
+      <Button handleClick={handleNeutralClick} text="NEUTRAL" />
+      <Button handleClick={handleBadClick} text="BAD" />
+      <h2>STATISTICS</h2>
       <Statistics good={good} neutral={neutral} bad={bad} />
+      <h5>
+        MADE BY &nbsp;
+        <a href="https://github.com/t-minini" target="_blank" rel="noreferrer">
+          TULIO MININI
+        </a>
+      </h5>
     </>
   );
 };
