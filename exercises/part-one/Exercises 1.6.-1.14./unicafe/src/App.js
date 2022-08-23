@@ -4,24 +4,48 @@ const Button = ({ handleClick, text }) => (
   <button onClick={handleClick}>{text}</button>
 );
 
-const Statistics = ({ good, neutral, bad }) => {
-  if (good === 0 && neutral === 0 && bad === 0) {
-    return <div>No feedback given!</div>;
+const Statistics = (props) => {
+  if (props.good === 0 && props.neutral === 0 && props.bad === 0) {
+    return <div>No feedback given</div>;
   } else {
     return (
       <div>
-        <div>Good Feedback: {good}</div>
-        <div>Neutral Feedback: {neutral}</div>
-        <div>Bad Feedback: {bad}</div>
-        <div>Total Feedback: {good + neutral + bad} </div>
-        <div>Average Feedback: {(good + neutral + bad) / 3} </div>
-        <div>
-          % of Positive Feedback: {(good * 100) / (good + neutral + bad)} %{" "}
-        </div>
+        <StatisticsLine text="good" value={props.good} />
+        <StatisticsLine text="neutral" value={props.neutral} />
+        <StatisticsLine text="bad" value={props.bad} />
+        <StatisticsLine
+          text="all"
+          value={props.good + props.neutral + props.bad}
+        />
+        <StatisticsLine
+          text="average"
+          value={((props.good + props.neutral + props.bad) / 3).toFixed(1)}
+        />
+        <StatisticsLine
+          text="positive"
+          value={
+            (
+              (props.good * 100) /
+              (props.good + props.neutral + props.bad)
+            ).toFixed(1) + " %"
+          }
+        />
       </div>
     );
   }
 };
+
+const StatisticsLine = (props) => {
+  // console.log(props);
+  return (
+    <div>
+      <div>
+        {props.text} {props.value}
+      </div>
+    </div>
+  );
+};
+
 const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
