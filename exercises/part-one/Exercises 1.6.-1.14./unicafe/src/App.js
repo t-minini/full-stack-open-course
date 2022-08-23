@@ -5,9 +5,9 @@ const Button = ({ handleClick, text }) => (
 );
 
 const Statistics = ({ good, neutral, bad }) => {
-  if (good === 0 || neutral === 0 || bad === 0) {
+  if (good === 0 && neutral === 0 && bad === 0) {
     return <div>No feedback given!</div>;
-  } 
+  } else {
     return (
       <div>
         <div>Good Feedback: {good}</div>
@@ -20,7 +20,7 @@ const Statistics = ({ good, neutral, bad }) => {
         </div>
       </div>
     );
-
+  }
 };
 const App = () => {
   const [good, setGood] = useState(0);
