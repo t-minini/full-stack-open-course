@@ -5,18 +5,22 @@ const Button = ({ handleClick, text }) => (
 );
 
 const Statistics = ({ good, neutral, bad }) => {
-  return (
-    <div>
-      <div>Good Feedback: {good}</div>
-      <div>Neutral Feedback: {neutral}</div>
-      <div>Bad Feedback: {bad}</div>
-      <div>Total Feedback: {good + neutral + bad} </div>
-      <div>Average Feedback: {(good + neutral + bad) / 3} </div>
+  if (good === 0 || neutral === 0 || bad === 0) {
+    return <div>No feedback given!</div>;
+  } 
+    return (
       <div>
-        % of Positive Feedback: {(good * 100) / (good + neutral + bad)} %{" "}
+        <div>Good Feedback: {good}</div>
+        <div>Neutral Feedback: {neutral}</div>
+        <div>Bad Feedback: {bad}</div>
+        <div>Total Feedback: {good + neutral + bad} </div>
+        <div>Average Feedback: {(good + neutral + bad) / 3} </div>
+        <div>
+          % of Positive Feedback: {(good * 100) / (good + neutral + bad)} %{" "}
+        </div>
       </div>
-    </div>
-  );
+    );
+
 };
 const App = () => {
   const [good, setGood] = useState(0);
