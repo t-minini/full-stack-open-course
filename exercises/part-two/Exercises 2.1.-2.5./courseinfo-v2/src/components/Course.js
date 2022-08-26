@@ -16,25 +16,34 @@ const Course = ({ course }) => {
       <Total part={total} />
     </>
   );
-
-  const total = course.parts.reduce((s, p) => {
+  const total = course[0].parts.reduce((s, p) => {
     return { exercises: s.exercises + p.exercises };
   });
-  // console.log(total);
 
-  const Total = (props) => {
-    // console.log(props);
-    return (
-      <p>
-        <strong>total of {props.part.exercises} exercises</strong>
-      </p>
-    );
-  };
+  const ContentNode = ({ parts }) => (
+    <>
+      <Part part={parts[0]} />
+      <Part part={parts[1]} />
+      <Total part={total2} />
+    </>
+  );
+
+  const total2 = course[1].parts.reduce((s, p) => {
+    return { exercises: s.exercises + p.exercises };
+  });
+
+  const Total = ({ part }) => (
+    <p>
+      <strong>total of {part.exercises} exercises</strong>
+    </p>
+  );
 
   return (
     <div>
-      <Header course={course.name} />
-      <Content parts={course.parts} />
+      <Header course={course[0].name} />
+      <Content parts={course[0].parts} />
+      <Header course={course[1].name} />
+      <ContentNode parts={course[1].parts} />
     </div>
   );
 };
